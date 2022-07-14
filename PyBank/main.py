@@ -19,9 +19,11 @@ with open(csvpath) as csvfile:
     # List of changes
     changes_list =[]
     months_changes_list= []
+
     #setting previous to have a null value, Nonetype
     previous = None
-    sumChange = 0
+    
+    # initialising counters
     sumMonths = 0
     sumProfit = 0
     for row in csvreader:
@@ -48,7 +50,7 @@ with open(csvpath) as csvfile:
     # Finding the average of the changes in profits/losses
     avg = sum(changes_list)/len(changes_list)       
     
-    # Printing out results
+    # Printing out results to terminal
     print("Financial Analysis")
     print("-"*25)
     print(f'Total Months: {sumMonths}')
@@ -56,7 +58,8 @@ with open(csvpath) as csvfile:
     print(f'Average change: ${(avg)}')
     print(f"Greatest Increase in Profits: {month_greatest_increase} $({greatesti})")
     print(f"Greatest Decrease in Profits: {month_greatest_decrease} $({greatestd})")        
-        
+
+# Writing the results to the text file        
 outfile = open('PyBank Analysis', 'w')
 outfile.write(("Financial Analysis" +'\n'))
 outfile.write("-"*25 +'\n')

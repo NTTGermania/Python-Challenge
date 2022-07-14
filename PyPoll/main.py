@@ -15,11 +15,12 @@ with open(csvpath) as csvfile:
 
     csv_header = next(csvreader)
 
+    # Variables declaration
     total_ballots = 0 
     candidates = dict()
     name = None
-    # Make it a default dict
-    d = dict()
+    
+    # iterating through the csv file and adding keys and values to the dictionary
     for row in csvreader:
         total_ballots = total_ballots + 1
         
@@ -32,7 +33,7 @@ with open(csvpath) as csvfile:
         else:
             candidates[name] += 1
         
-           
+# Printing the results to terminal           
 print("Election Results")
 print("-"*25)
 print("Total Votes:", total_ballots)
@@ -44,6 +45,7 @@ print("-"*25)
 print(f'Winner: {max(candidates, key=candidates.get)}')
 print("-"*25)
 
+# Writing the results to the text file
 outfile = open('PyPoll Analysis', 'w')
 outfile.write("Election Results" + '\n')
 outfile.write("-"*25 + '\n')

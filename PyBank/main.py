@@ -13,8 +13,6 @@ with open(csvpath) as csvfile:
 
     csvreader = csv.reader(csvfile, delimiter =',')
 
-    print(csvreader)
-
     csv_header = next(csvreader)
     
     # Variables Declaration 
@@ -47,15 +45,24 @@ with open(csvpath) as csvfile:
     month_greatest_increase = months_changes_list[changes_list.index(max(changes_list))]   
     month_greatest_decrease = months_changes_list[changes_list.index(min(changes_list))]
     
+    # Finding the average of the changes in profits/losses
     avg = sum(changes_list)/len(changes_list)       
     
     # Printing out results
     print("Financial Analysis")
     print("-"*25)
-    print("Total Months: " + str(sumMonths))
-    print("Total: " + str(sumProfit))
-    print("Average change: $" + str(avg))
+    print(f'Total Months: {sumMonths}')
+    print(f'Total: {sumProfit}')
+    print(f'Average change: ${(avg)}')
     print(f"Greatest Increase in Profits: {month_greatest_increase} $({greatesti})")
     print(f"Greatest Decrease in Profits: {month_greatest_decrease} $({greatestd})")        
         
-
+outfile = open('PyBank Analysis', 'w')
+outfile.write(("Financial Analysis" +'\n'))
+outfile.write("-"*25 +'\n')
+outfile.write(f'Total Months: {sumMonths}'+'\n')
+outfile.write(f'Total: {sumProfit}'+'\n')
+outfile.write(f'Average change: ${(avg)}'+'\n')
+outfile.write(f"Greatest Increase in Profits: {month_greatest_increase} $({greatesti})"+'\n')
+outfile.write(f"Greatest Decrease in Profits: {month_greatest_decrease} $({greatestd})"+'\n')  
+outfile.close()

@@ -22,7 +22,7 @@ with open(csvpath) as csvfile:
 
     #setting previous to have a null value, Nonetype
     previous = None
-    
+
     # initialising counters
     sumMonths = 0
     sumProfit = 0
@@ -54,7 +54,7 @@ with open(csvpath) as csvfile:
     print("Financial Analysis")
     print("-"*25)
     print(f'Total Months: {sumMonths}')
-    print(f'Total: {sumProfit}')
+    print(f'Total: ${sumProfit}')
     print(f'Average change: ${(avg)}')
     print(f"Greatest Increase in Profits: {month_greatest_increase} $({greatesti})")
     print(f"Greatest Decrease in Profits: {month_greatest_decrease} $({greatestd})")        
@@ -64,7 +64,7 @@ outfile = open('PyBank Analysis', 'w')
 outfile.write(("Financial Analysis" +'\n'))
 outfile.write("-"*25 +'\n')
 outfile.write(f'Total Months: {sumMonths}'+'\n')
-outfile.write(f'Total: {sumProfit}'+'\n')
+outfile.write(f'Total: ${sumProfit}'+'\n')
 outfile.write(f'Average change: ${(avg)}'+'\n')
 outfile.write(f"Greatest Increase in Profits: {month_greatest_increase} $({greatesti})"+'\n')
 outfile.write(f"Greatest Decrease in Profits: {month_greatest_decrease} $({greatestd})"+'\n')  

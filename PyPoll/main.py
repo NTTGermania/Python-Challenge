@@ -46,7 +46,7 @@ print(f'Winner: {max(candidates, key=candidates.get)}')
 print("-"*25)
 
 # Writing the results to the text file
-outfile = open('PyPoll Analysis', 'w')
+outfile = open('analysis\\PyPoll Analysis', 'w')
 outfile.write("Election Results" + '\n')
 outfile.write("-"*25 + '\n')
 outfile.write(f'Total Votes: {total_ballots}' + '\n')

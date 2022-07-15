@@ -60,7 +60,7 @@ with open(csvpath) as csvfile:
     print(f"Greatest Decrease in Profits: {month_greatest_decrease} $({greatestd})")        
 
 # Writing the results to the text file        
-outfile = open('PyBank Analysis', 'w')
+outfile = open('analysis\\PyBank Analysis', 'w')
 outfile.write(("Financial Analysis" +'\n'))
 outfile.write("-"*25 +'\n')
 outfile.write(f'Total Months: {sumMonths}'+'\n')
